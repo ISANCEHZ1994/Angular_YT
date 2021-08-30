@@ -1,0 +1,18 @@
+<!-- <p>{{ task.text }}</p> -->
+
+<div 
+[ngClass]="{ reminder: task.reminder }" 
+class="task"
+>
+    <h3>{{ task.text }} 
+        <!-- remember that the onDelete() function is coming from the tasks.component.ts file -->
+        <fa-icon 
+          (click)= "onDelete(task)"
+          [ngStyle]= "{ 'color': 'red' }"
+          [icon]= "faTimes"
+        ></fa-icon>
+    </h3>
+    <p>{{ task.day }}</p>
+    <!-- <p>{{ task.reminder }}</p> -->
+</div>
+

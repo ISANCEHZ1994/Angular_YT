@@ -1,0 +1,15 @@
+<header>
+    <h1>{{ title }}</h1>
+
+    <!-- we want to pass in the `text` from the button!  -->
+    <!-- we can also change how we recieve information inside the button.component.ts -->
+    <app-button
+        color="green"
+        text="Add"
+        (btnClick)="toggleAddTask()"
+    ></app-button>
+    <!-- we are telling this copy of the app-button to do a specifc function in this case toggleAddTask() located 
+         inside the header.component.ts 
+         if we check out button.component.ts - we can see that we are using the variable btnClick -->
+   
+</header>
