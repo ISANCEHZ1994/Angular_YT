@@ -17,6 +17,24 @@
       "text": "Date Night",
       "day": "March 17th at 9:30pm",
       "reminder": false
+    },
+    {
+      "text": "Go to Card Store to Get Trap Card",
+      "day": "Today (9/2/2021) at 6pm",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "test to be used and deleted!",
+      "day": "9/13/2021",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "Lose Weight",
+      "day": "Sept 29th at 7:30pm",
+      "reminder": true,
+      "id": 6
     }
   ]
 }

@@ -1,5 +1,6 @@
 <!-- This is without using @Input() -->
-<h5>Here is some plain looping</h5>
+
+<h5>(Below is some plain looping)</h5>
 <p 
   *ngFor="let task of tasks"
 >{{ task.text }}</p>
@@ -7,11 +8,15 @@
 <!-- While using @Input() because/inside of task-item component -->
 <!-- passing task(while as making a reference to what a task is inside task-item.component.ts)
      as a property thru the app-task-item component -->
-<h5>Here we are passing it thru the App-Task-Item Component</h5>
+<app-add-task  (onAddTask)="addTask($event)">
+</app-add-task>
+
+<h5>(Below we are passing it thru the Task-Item Component)</h5>
 <app-task-item
   *ngFor="let task of tasks"
   [task]="task"
-  (onDeleteTask)= "deleteTask(task)"     
+  (onDeleteTask)= "deleteTask(task)"   
+  (onToggleReminder)="toggleTask(task)"  
 ></app-task-item>
 
 

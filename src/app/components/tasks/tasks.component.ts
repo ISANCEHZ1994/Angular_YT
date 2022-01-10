@@ -28,15 +28,37 @@ export class TasksComponent implements OnInit {
   constructor( private taskService: TaskService ) { };
 
   ngOnInit(): void {
-     this.taskService.getTasks().subscribe( (tasks) => (this.tasks = tasks) );
+     this.taskService
+     .getTasks()
+     .subscribe( 
+       (tasks) => (this.tasks = tasks) 
+     );
   };
 
   deleteTask(task: Task){
     this.taskService
     .deleteTask(task)
-    .subscribe(  // Above is going to call the delete method inside the service
+    .subscribe(  // Above is going to call the deleteTask method inside the service 
       () => (this.tasks = this.tasks.filter((t) => t.id !== task.id) ) // when completed it will filter out the deleted method
     );
+  };
+
+  toggleTask(task: Task){ // now we can double click on a task and after refresh will stay the new value
+    task.reminder = !task.reminder;
+    this.taskService
+    .updateTaskReminder(task)
+    .subscribe();
+
+    console.log(task.reminder, 'this should be either true of false!')
+  };
+
+  addTask(task: Task){
+    this.taskService
+    .addTask(task)
+    .subscribe(
+      (task) => (this.tasks.push(task))
+    );
+    console.log(task, 'logging the task!');
   };
 
 

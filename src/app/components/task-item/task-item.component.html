@@ -3,6 +3,7 @@
 <div 
 [ngClass]="{ reminder: task.reminder }" 
 class="task"
+(dblclick)="onToggle(task)"
 >
     <h3>{{ task.text }} 
         <!-- remember that the onDelete() function is coming from the tasks.component.ts file -->
